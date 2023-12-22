@@ -10,6 +10,7 @@ import {
   setDoc,
   onSnapshot,
   deleteDoc,
+<<<<<<< HEAD
   doc,
 } from 'firebase/firestore'
 import { db, storage } from './firebase'
@@ -39,12 +40,29 @@ const RatingStar = ({ rating }) => {
           <path d="M12 17.27L18.18 21L16.54 13.94L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.94L5.82 21L12 17.27Z" />
         </svg>
       )
+=======
+  doc} from 'firebase/firestore';
+  import { db, storage } from './firebase';
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+
+import Link from 'next/link';
+  
+  const RatingStar = ({ rating }) => {
+    const stars = [];
+    for (let i = 0; i < 5; i++) {
+       if (i < rating) {
+         stars.push(<svg className="w-4 h-4 fill-current text-yellow-400" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21L16.54 13.94L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.94L5.82 21L12 17.27Z"/></svg>);
+       } else {
+         stars.push(<svg className="w-4 h-4 fill-current text-gray-400" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21L16.54 13.94L22 9.24L14.81 8.63L12 2L9.19 8.63L2 9.24L7.46 13.94L5.82 21L12 17.27Z"/></svg>);
+       }
+>>>>>>> d12b253 (Add Firebase storage functionality and update Home component)
     }
   }
   return <div className="flex space-x-1">{stars}</div>
 }
 
 export default function Home() {
+<<<<<<< HEAD
   const [items, setItems] = useState([{ saran: '', rating: 0, acc: false }])
   const [newItems, setNewItems] = useState({
     saran: '',
@@ -81,6 +99,50 @@ export default function Home() {
         acc: (newItems.acc = false),
       })
       setNewItems({ saran: '', rating: 0, acc: false })
+=======
+  const [items, setItems] = useState([{ saran: '',foto: null, rating: '', acc: false, url: '' }]);
+  const [newItems, setNewItems] = useState({ saran: '', foto: null,rating: '', acc: false , url: ''});
+  const [total, setTotal] = useState(0);
+
+  const handlefoto = (e) => {
+    if (e.target.files && e.target.files[0]) {
+      setNewItems({ ...newItems, foto: e.target.files[0] });
+    }
+  };
+  
+
+  const addItem = async (e) =>  {
+    e.preventDefault();
+    if (newItems.saran !== '' && newItems.foto !== null && newItems.rating !== '') {
+      const storage = getStorage();
+      const storageRef = ref(storage, 'images/' + newItems.foto);
+      const uploadTask = uploadBytesResumable(storageRef, newItems.foto);
+
+      uploadTask.on('state_changed',
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          // When upload is complete, get the download URL
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            setNewItems({ ...newItems, url: downloadURL });
+            // Add to Firestore
+            addDoc(collection(db, 'items'), {
+              saran: newItems.saran.trim(),
+              rating: newItems.rating,
+              url: downloadURL,
+              acc: false
+            });
+          });
+        }
+      );
+
+      setNewItems({ saran: '', rating: '', acc: false, url: '' });
+>>>>>>> d12b253 (Add Firebase storage functionality and update Home component)
     }
   }
 
@@ -134,6 +196,7 @@ export default function Home() {
             placeholder="silahkan di isi"
           />
           <h4>foto</h4>
+<<<<<<< HEAD
           <input
             value={newItems.foto}
             onChange={(e) => setNewItems({ ...newItems, foto: e.target.value })}
@@ -143,6 +206,12 @@ export default function Home() {
             className=""
             id="foto"
           />
+=======
+          <input value={newItems.foto}
+          onChange={handlefoto}
+          type="file"
+          accept="image/*" className="" id="foto" max={1} maxLength={1000} />
+>>>>>>> d12b253 (Add Firebase storage functionality and update Home component)
           <h4>rating</h4>
           <input
             value={newItems.rating}
@@ -176,6 +245,7 @@ export default function Home() {
                   key={item.id}
                   className="text-center border-b border-gray-300"
                 >
+<<<<<<< HEAD
                   <td className="p-3">{item.saran}</td>
                   <td className="p-3">{item.foto}</td>
                   <td className="p-3">
@@ -200,6 +270,59 @@ export default function Home() {
                   </td>
                 </tr>
               ))}
+=======
+                  {item.acc ? '✅' : '❌'}
+                </button>
+              </td>
+              <td className="p-3">
+                <button
+                  onClick={() => deleteItem(item.id)}
+                  className="p-2 border border-slate-900 hover:bg-slate-900"
+                >
+                  X
+                </button> <p>{item.acc}</p>
+              </td>
+            </tr>
+            ))}
+          </tbody>
+        </table>
+        <table className="w-full">
+          <thead>
+            <tr className="bg-gray-200 text-slate-900">
+              <th className="p-3 font-bold">Saran</th>
+              <th className="p-3 font-bold">Foto</th>
+              <th className="p-3 font-bold">Rating</th>
+              <th className="p-3 font-bold">Acc</th>
+              <th className="p-3 font-bold">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filterAcceptedItems2.map(item => (
+              <tr key={item.id} className="text-center border-b border-gray-300">
+              <td className="p-3">{item.saran}</td>
+              <td className="p-3"><Image src={item.foto}/> </td>
+              <td className="p-3">
+               <RatingStar rating={item.rating} />
+             </td>
+              <td className="p-3">
+                <button
+                  onClick={() => updateItem(item.id, !item.acc)}
+                  className="p-2 border border-slate-900 hover:bg-slate-900"
+                >
+                  {item.acc ? '✅' : '❌'}
+                </button>
+              </td>
+              <td className="p-3">
+                <button
+                  onClick={() => deleteItem(item.id)}
+                  className="p-2 border border-slate-900 hover:bg-slate-900"
+                >
+                  X
+                </button> <p>{item.acc}</p>
+              </td>
+            </tr>
+            ))}
+>>>>>>> d12b253 (Add Firebase storage functionality and update Home component)
             </tbody>
           </table>
           <table className="w-full">
