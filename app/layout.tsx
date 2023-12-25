@@ -15,13 +15,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-      <SessionProvider>
-
-        <Nafbar />
-        {children}
-        <Footer/>
-      </SessionProvider>
-        </body>
+      <SessionProvider >
+<div className="bg-[url('../public/home.png')]">
+<Nafbar />
+{children}
+<Footer/>
+</div>
+</SessionProvider>
+</body>
     </html>
   )
 }

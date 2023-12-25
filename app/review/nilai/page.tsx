@@ -1,9 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import Review1 from '../../public/review1.png'
-import Card from '../../public/card.png'
-import Testymon from '../../public/testimon.png'
+import Review1 from '../../../public/review1.png'
+import Card from '../../../public/card.png'
+import Testymon from '../../../public/testimon.png'
 
 export default function review() {
   return (
@@ -79,6 +79,38 @@ export default function review() {
         </section>
       </div>
     </form>
+  </div>
+  <div className="shadow-sm bg-white flex flex-col justify-center items-stretch px-16 py-12 rounded-[48.739px] border-[1.95px] border-solid border-blue-950 max-md:px-5 m-10">
+    <div className="mt-1.5 mb-1 max-md:max-w-full max-md:mr-2">
+      <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+        <div className="flex flex-col items-stretch w-[43%] max-md:w-full max-md:ml-0">
+          <Image
+            loading="lazy"
+            src={Testymon}
+
+            className="aspect-[1.58] object-contain object-center w-full overflow-hidden grow max-md:max-w-full max-md:mt-10"
+            alt=""
+          />
+        </div>
+        <div className="flex flex-col items-stretch w-[57%] ml-5 max-md:w-full max-md:ml-0">
+          <div className="flex flex-col my-auto py-px items-start max-md:max-w-full max-md:mt-10">
+            <div className="flex items-center justify-between gap-5">
+              <Image
+            src={Testymon}
+            loading="lazy"
+                className="aspect-[1.02] object-contain object-center w-16 overflow-hidden shrink-0 max-w-full my-auto"
+                alt=""
+              />
+              <div className="self-stretch flex grow basis-[0%] flex-col items-stretch">
+                <div className="text-blue-950 text-4xl whitespace-nowrap">Muhammad Fatah</div>
+                <div className="text-blue-950 text-opacity-50 text-3xl mt-3">16/12/2023</div>
+              </div>
+            </div>
+            <div className="text-blue-950 text-justify text-3xl self-stretch mt-7 max-md:max-w-full">Lorem ipsum dolor sit amet consectetur. Quis sed sed magna mattis et. Vulputate ut eu quam turpis vulputate proin. Turpis dictum quam enim at enim suspendisse scelerisque volutpat viverra. Sapien ultrices hac faucibus nibh maecenas urna sagittis faucibus tristique.</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
   )
