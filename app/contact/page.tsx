@@ -1,3 +1,4 @@
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -7,8 +8,8 @@ export default function contact() {
   return (
     <>
       <div className="bg-white">
-        
-        <div className="relative isolate px-6 pt-14 lg:px-8">
+
+        <div className="relative isolate px-6 pt-20 lg:px-8">
           <div className="mx-64 max-w-7xl flex justify-between items-center py-16 sm:py-16 lg:py-28">
             <div className="w-full lg:w-1/2 justify-center">
               <Image
@@ -16,7 +17,7 @@ export default function contact() {
                 src={Icon1}
                 alt="Your Company"
                 width={300}
-                height={300}
+                height={500}
               />
             </div>
             <div className="w-full lg:w-1/2">
@@ -29,7 +30,7 @@ export default function contact() {
                 </p>
                 <div className="mt-3 flex items-center justify-center lg:justify-start gap-x-6">
                   <Link
-                    href="https://wa.me/0"
+                    href="https://wa.me/082322303841"
                     className="border-2 border-b-4 border-blue-900 bg-white text-blue-900 rounded-full px-4 py-2 text-sm font-medium lg-left sm:text-xl"
                   >
                     CONTACT
