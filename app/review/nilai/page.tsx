@@ -4,12 +4,7 @@ import { db } from '../../../firebaseconfig/firebase'
 import { addDoc, collection, onSnapshot } from 'firebase/firestore'
 
 export default function Review() {
-  const [review, setReview] = useState({
-    saran: '',
-    rating: 0,
-    foto: '',
-    acc: false,
-  })
+  const [review, setReview] = useState([])
   const [loading, setLoading] = useState(false)
 
   const handleInputChange = (e) => {

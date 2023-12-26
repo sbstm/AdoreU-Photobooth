@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { db } from '../../../firebaseconfig/firebase'
 import {
   collection,
@@ -13,7 +13,7 @@ import {
 } from 'firebase/firestore'
 import { ref } from 'firebase/storage' // Import ref
 
-export default function adminreview() {
+export default function Adminreview() {
   const [review, setReview] = useState<Array<{ id: string }>>([]) // Update the type of reviews state
 
   useEffect(() => {
