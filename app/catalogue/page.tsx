@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -9,14 +8,14 @@ import Testymon from '../../public/testimon.png'
 export default function review() {
   return (
     <>
-    <div className="flex flex-col items-center pt-20">
+    <div className="flex flex-col items-center -mt-20">
     <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/9c02506289d58613a5586258e046021917a7f8baf4c3b98c4f15e211f007dbf8?apiKey=718f8907f9624113b768d97c01c705e6&"className="aspect-[2.19] object-contain object-center w-full overflow-hidden self-stretch max-md:max-w-full" />
     <div className="items-stretch flex w-[119px] max-w-full gap-2.5 mt-6 px-5">
       <div className="bg-blue-700 flex shrink-0 h-3.5 flex-col flex-1 rounded-xl border-2 border-solid border-black"></div>
       <div className="bg-white flex shrink-0 h-3.5 flex-col flex-1 rounded-xl border-2 border-solid border-black"></div>
       <div className="bg-white flex shrink-0 h-3.5 flex-col flex-1 rounded-xl border-2 border-solid border-black"></div>
     </div>
-    <div className="self-stretch flex w-full items-stretch justify-between gap-5 mt-32 px-5 max-md:max-w-full max-md:flex-wrap max-md:mt-10">
+    <div className="self-stretch flex w-full items-stretch justify-between gap-5 mt-24 px-5 max-md:max-w-full max-md:flex-wrap max-md:mt-10">
       <div className="text-blue-950 text-justify text-2xl grow shrink basis-auto max-md:max-w-full"> Lorem ipsum dolor sit amet consectetur. Quis sed sed magna mattis et. Vulputate ut eu quam turpis vulputate proin. Turpis dictum quam enim at enim suspendisse scelerisque volutpat viverra. Sapien ultrices hac faucibus nibh maecenas urna sagittis faucibus tristique. </div>
       <div className="text-blue-950 text-justify text-2xl grow shrink basis-auto self-start max-md:max-w-full"> Lorem ipsum dolor sit amet consectetur. Quis sed sed magna mattis et. Vulputate ut eu quam turpis vulputate proin. Turpis dictum quam enim at enim suspendisse scelerisque volutpat viverra. Sapien ultrices hac faucibus nibh maecenas urna sagittis faucibus tristique. </div>
       <div className="text-blue-950 text-3xl italic whitespace-nowrap self-start"> ABOUT </div>

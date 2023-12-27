@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
@@ -8,8 +7,7 @@ export default function contact() {
   return (
     <>
       <div className="bg-white">
-
-        <div className="relative isolate px-6 pt-20 lg:px-8">
+        <div className="relative isolate px-6 -mt-20 lg:px-8">
           <div className="mx-64 max-w-7xl flex justify-between items-center py-16 sm:py-16 lg:py-28">
             <div className="w-full lg:w-1/2 justify-center">
               <Image
