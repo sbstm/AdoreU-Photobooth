@@ -178,28 +178,28 @@ export default function review() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col px-5 items-end">
+      <div className="flex flex-col px-5 items-center w-full">
         <div className="text-blue-950 text-right text-3xl italic whitespace-nowrap">
           {' '}
           TESTIMONIALS{' '}
         </div>
-        <div className="shadow-sm bg-white self-stretch flex w-full flex-col justify-center items-center mt-20 px-16 py-12 rounded-[48.739px] border-[1.95px] border-solid border-blue-950 max-md:max-w-full max-md:mt-10 max-md:px-5">
-          <div className="w-full max-w-[1221px] mt-2 mb-1.5 max-md:max-w-full">
-            <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
-              <div className="flex flex-col items-stretch w-[28%] max-md:w-full max-md:ml-0">
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&"
-                  className="aspect-square object-contain object-center w-full overflow-hidden max-md:mt-10"
-                  aria-label="Testimonial Image"
-                />
-              </div>
-              <div className="flex flex-col items-stretch w-[72%] ml-5 max-md:w-full max-md:ml-0">
-                {testimoni.map((testimoni) => (
-                  <div
-                    className="flex flex-col my-auto items-start max-md:max-w-full max-md:mt-10"
-                    key={testimoni.id}
-                  >
+        {testimoni.map((testimoni) => (
+          <div
+            key={testimoni.id}
+            className="shadow-sm bg-white self-stretch flex w-[60%] flex-col justify-center items-center mt-20 px-16 py-12 rounded-[48.739px] border-[1.95px] border-solid border-blue-950  "
+          >
+            <div className="w-full max-w-[1221px] mt-2 mb-1.5 max-md:max-w-full">
+              <div className="gap-5 flex max-md:flex-col max-md:items-stretch max-md:gap-0">
+                <div className="flex flex-col items-stretch w-[28%] max-md:w-full max-md:ml-0">
+                  <img
+                    loading="lazy"
+                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/88d1177e50c0fcf19c096c8be0b94dc57554dfd3fd27bc25f931f67c39a5c607?apiKey=718f8907f9624113b768d97c01c705e6&"
+                    className="aspect-square object-contain object-center w-full overflow-hidden max-md:mt-10"
+                    aria-label="Testimonial Image"
+                  />
+                </div>
+                <div className="flex flex-col items-stretch w-[72%] ml-5 max-md:w-full max-md:ml-0">
+                  <div className="flex flex-col my-auto items-start max-md:max-w-full max-md:mt-10">
                     <div className="text-blue-950 text-3xl self-stretch max-md:max-w-full">
                       {' '}
                       {testimoni.nama}{' '}
@@ -217,14 +217,14 @@ export default function review() {
                     </div>
                     <div className="text-blue-950 text-justify text-2xl self-stretch mt-7 max-md:max-w-full">
                       {' '}
-                      {testimoni.rating}{' '}
+                      {testimoni.saran}{' '}
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
       <div className="flex flex-col px-5 items-end">
         <div className="text-blue-950 text-3xl italic whitespace-nowrap">

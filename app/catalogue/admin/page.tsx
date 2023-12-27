@@ -20,12 +20,12 @@ export default function testimoni() {
     setLoading(true)
     if (testimoni.nama !== '' && testimoni.pesan !== '') {
       try {
-        const currentDate = new Date().toISOString() // Get current date in ISO format
+        const currentDate = new Date().toISOString().split('T')[0]
         const newTestimoni = { ...testimoni, date: currentDate } // Add date field to testimoni object
         await addDoc(collection(db, 'testimoni'), newTestimoni)
         console.log('Document added successfully')
         // Reset the form after submission
-        settestimoni({ nama: '', pesan: '', date: '' })
+        settestimoni({ nama: '', saran: '', date: '' })
       } catch (error) {
         console.error('Error adding document: ', error)
       }
@@ -64,7 +64,7 @@ export default function testimoni() {
         <div className="flex flex-col items-center justify-between">
           <h1 className="text-2xl font-bold">Saran</h1>
           <input
-            name="rating"
+            name="saran"
             value={testimoni.saran}
             onChange={handleInputChange}
             type="text"
